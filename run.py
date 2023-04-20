@@ -1,7 +1,7 @@
 import random
 
 def pick_random_word():
-    WORDS = ("python", "javascript", "needed", "carrying", "answer",  "piano")
+    WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano")
     word = random.choice(WORDS)
     return word
 

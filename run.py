@@ -1,4 +1,5 @@
 import random
+import string
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -17,12 +18,29 @@ score = SHEET.worksheet("Scoreboard")
 data = score.get_all_values()
 print(data)
 
+def beginning_intro():
+   while True:
+    try:
+        ready = input("\nAhoy there folks! You ready to play some hangman? --> Y/N?").upper()
+        if ready == "Y":
+                    print("Awesome, let's get started")
+                    break
+                    # MAKE SURE TO ADD FUNCTION TO START GAME
+        elif ready =="N":
+                print("That's a shame, come on back when you're ready...")
+    except LetterError:
+        print("Oops, please answer with Y or N!")
 
+beginning_intro()
+
+                    
 def pick_random_word():
     WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano")
     word = random.choice(WORDS)
-    return word
+    return word.upper()
 
 hidden_word = pick_random_word()
 print(hidden_word)
 
+def answer(hidden_word):
+    picked_word = set(hidden_word)

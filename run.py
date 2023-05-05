@@ -19,21 +19,26 @@ data = score.get_all_values()
 print(data)
 
 def beginning_intro():
-   while True:
-    try:
-        ready = input("\nAhoy there folks! You ready to play some hangman? --> Y/N?").upper()
-        if ready not in ("Y","N"):
-                raise ValueError("Oops, please answer with Y or N!")
-        if ready == "Y":
-                    print("Awesome, let's get started")
-                    break
-                    # MAKE SURE TO ADD FUNCTION TO START GAME
-        elif ready =="N":
-                print("That's a shame, come on back when you're ready...")
-    except ValueError as value_error:
-            print(value_error)
+    while True:
+        try:
+            ready = input("\nAhoy there folks! You ready to play some hangman? --> Y/N?").upper()
+            if ready not in ("Y","N"):
+                    raise ValueError("Oops, please answer with Y or N!")
+            if ready == "Y":
+                        print("Awesome, let's get started")
+                        print("▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▒█░▒█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄")
+                        print("▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
+                        print("▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀")
+                        break
+                        # MAKE SURE TO ADD FUNCTION TO START GAME
+            elif ready =="N":
+                    print("That's a shame, come on back when you're ready...")
+        except ValueError as value_error:
+                print(value_error)
+    
 
 beginning_intro()
+
 
 def pick_random_word():
     WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano")

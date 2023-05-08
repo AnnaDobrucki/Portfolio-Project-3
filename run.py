@@ -25,7 +25,7 @@ def beginning_intro():
             if ready not in ("Y","N"):
                     raise ValueError("Oops, please answer with Y or N!")
             if ready == "Y":
-                        print("Awesome, let's get started")
+                        print("Awesome, let's get started \n")
                         print("▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▒█░▒█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄")
                         print("▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
                         print("▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀")
@@ -48,5 +48,17 @@ def pick_random_word():
 hidden_word = pick_random_word()
 print(hidden_word)
 
-def answer(hidden_word):
+
+def play_game(hidden_word):
     picked_word = set(hidden_word)
+    guess = []
+    lives = 5 
+    while True:
+        try:
+            answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
+            if answers in guessed:
+                raise ValueError ("\n Fraid not, you already tried that!")
+            if answer in picked_word:
+                clear_screen()
+        except ValueError as value_error:
+                print(value_error)

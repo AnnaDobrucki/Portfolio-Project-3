@@ -1,6 +1,7 @@
 import random
 import string
 import gspread
+import os
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -18,6 +19,9 @@ score = SHEET.worksheet("Scoreboard")
 data = score.get_all_values()
 print(data)
 
+def clear_screen():
+    os.system('clear')
+
 def beginning_intro():
     while True:
         try:
@@ -26,6 +30,7 @@ def beginning_intro():
                     raise ValueError("Oops, please answer with Y or N!")
             if ready == "Y":
                         print("Awesome, let's get started \n")
+                        clear_screen()
                         print("▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▒█░▒█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄")
                         print("▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
                         print("▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀")
@@ -38,7 +43,6 @@ def beginning_intro():
     
 
 beginning_intro()
-
 
 def pick_random_word():
     WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano")
@@ -62,3 +66,4 @@ def play_game(hidden_word):
                 clear_screen()
         except ValueError as value_error:
                 print(value_error)
+

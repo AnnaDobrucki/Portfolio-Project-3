@@ -1,8 +1,6 @@
-import random
-import string
-import gspread
-import os
+from utility import clear_screen, draw_hangman, random, string, gspread, os
 from google.oauth2.service_account import Credentials
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,9 +17,6 @@ score = SHEET.worksheet("Scoreboard")
 data = score.get_all_values()
 print(data)
 
-def clear_screen():
-    os.system('clear')
-
 def beginning_intro():
     while True:
         try:
@@ -37,6 +32,7 @@ def beginning_intro():
                         break
                         # MAKE SURE TO ADD FUNCTION TO START GAME
             elif ready =="N":
+                    clear_screen()
                     print("That's a shame, come on back when you're ready...")
         except ValueError as value_error:
                 print(value_error)

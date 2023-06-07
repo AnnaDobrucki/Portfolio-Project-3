@@ -40,8 +40,22 @@ def beginning_intro():
 
 beginning_intro()
 
+def username():
+    while True:
+        username = input("Give us a name for the scoreboard! \n")
+
+        if username.isalnum() is not True:
+            print("Sorry we need letters and numbers for this one!")
+            continue
+        else:
+            print(f"Hi {username}, you must guess the word within 6 goes or loose a limb each loss.")
+            input("Let's get going! Please press enter")
+            return username
+
+username()
+
 def pick_random_word():
-    WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano")
+    WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano", "dragons")
     word = random.choice(WORDS)
     return word.upper()
 
@@ -52,7 +66,7 @@ print(hidden_word)
 def play_game(hidden_word):
     picked_word = set(hidden_word)
     guess = []
-    lives = 5 
+    lives = 6 
     while True:
         try:
             answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()

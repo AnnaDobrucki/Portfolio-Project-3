@@ -4,6 +4,9 @@ import gspread
 import os
 
 def clear_screen():
+    """
+    Function to clear screen
+    """
     os.system('clear')
 
 def draw_hangman(lives_remaining):

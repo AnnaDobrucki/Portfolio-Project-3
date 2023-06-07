@@ -18,6 +18,9 @@ data = score.get_all_values()
 print(data)
 
 def beginning_intro():
+    """
+    Start to game with an intro and choice wether to play or not
+    """
     while True:
         try:
             ready = input("\nAhoy there folks! You ready to play some hangman? --> Y/N?").upper()
@@ -41,20 +44,28 @@ def beginning_intro():
 beginning_intro()
 
 def username():
+    """
+    Function to add username for use in scoreboards"
+    """
     while True:
         username = input("Give us a name for the scoreboard! \n")
 
         if username.isalnum() is not True:
+            clear_screen()
             print("Sorry we need letters and numbers for this one!")
             continue
         else:
-            print(f"Hi {username}, you must guess the word within 6 goes or loose a limb each loss.")
+            clear_screen()
+            print(f"Hi {username}, you must guess the word within 6 goes or loose a limb each loss. \n")
             input("Let's get going! Please press enter")
             return username
 
 username()
 
 def pick_random_word():
+    """
+    Create a list of random words to be guessed for user
+    """
     WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano", "dragons")
     word = random.choice(WORDS)
     return word.upper()

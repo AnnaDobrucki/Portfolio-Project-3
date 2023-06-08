@@ -1,4 +1,4 @@
-from utility import clear_screen, draw_hangman, random, string, gspread, os
+from utility import clear_screen, draw_hangman, random, string, gspread, os, time
 from google.oauth2.service_account import Credentials
 
 
@@ -86,10 +86,22 @@ def play_game(hidden_word):
             if answers.isalpha():
                 if answers in guessed:
                     raise ValueError ("\n Fraid not, you already tried that!")
-                
+                    time.sleep(2)
+                    clear_screen()
+
                 elif answers in picked_word:
                     print(f"\n Smashing it out the park {username} ")
                     guessed.append(answers)
+                    time.sleep(3.5)
+                    clear_screen()
+
+                elif answers not in hidden_word:
+                    guessed.append(answers)
+                    lives -= 1
+                    print(f"Ouch so close and yet so far, you loose a limb! You have {lives} tries remaining")
+                    time.sleep(3.5)
+                    clear_screen()
+
             else:
                 raise ValueError("Hang on thats not a letter!")
         except ValueError as value_error:

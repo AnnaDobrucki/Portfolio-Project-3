@@ -2,6 +2,7 @@ import random
 import string
 import gspread
 import os
+import time
 
 def clear_screen():
     """

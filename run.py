@@ -57,7 +57,7 @@ def username():
         else:
             clear_screen()
             print(f"Hi {username}, you must guess the word within 6 goes or loose a limb each loss. \n")
-            input("Let's get going! Please press enter")
+            input("Let's get going! Please press enter and see how many letters there are to guess")
             return username
 
 username()
@@ -76,18 +76,22 @@ print(hidden_word)
 
 def play_game(hidden_word):
     picked_word = set(hidden_word)
+    print(len(hidden_word) * "_ ")
     guessed = []
     lives = 6 
     tries = False
-    print(len(hidden_word) * "_ ")
     while tries is False and lives > 0:
         try:
             answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
-            if answers in guessed:
-                raise ValueError ("\n Fraid not, you already tried that!")
-            elif answers in picked_word:
-                print(f"\n Smashing it out the park {username} ")
-                guessed.append(answers)
+            if answers.isalpha():
+                if answers in guessed:
+                    raise ValueError ("\n Fraid not, you already tried that!")
+                
+                elif answers in picked_word:
+                    print(f"\n Smashing it out the park {username} ")
+                    guessed.append(answers)
+            else:
+                raise ValueError("Hang on thats not a letter!")
         except ValueError as value_error:
                 print(value_error)
 

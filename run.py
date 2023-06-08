@@ -57,7 +57,7 @@ def username():
         else:
             clear_screen()
             print(f"Hi {username}, you must guess the word within 6 goes or loose a limb each loss. \n")
-            input("Let's get going! Please press enter and see how many letters there are to guess")
+            input("Let's get going! Please press enter and see how many letters there are to guess...")
             return username
 
 username()
@@ -98,8 +98,9 @@ def play_game(hidden_word):
                 elif answers not in hidden_word:
                     guessed.append(answers)
                     lives_remaining -= 1
-                    print(f"Ouch so close and yet so far, you loose a limb! You have {lives_remaining} tries remaining!")
+                    print(f"Ouch so close and yet so far, you loose a limb! You have {lives_remaining} tries remaining! \n")
                     draw_hangman(lives_remaining)
+                    print(f"So far you have used these {guessed}")
                     
             else:
                 raise ValueError("Hang on thats not a letter!")

@@ -45,7 +45,7 @@ beginning_intro()
 
 def username():
     """
-    Function to add username for use in scoreboards"
+    Function to add username for use in scoreboards
     """
     while True:
         username = input("Give us a name for the scoreboard! \n")
@@ -76,15 +76,19 @@ print(hidden_word)
 
 def play_game(hidden_word):
     picked_word = set(hidden_word)
-    guess = []
+    guessed = []
     lives = 6 
-    while True:
+    tries = False
+    print(len(hidden_word) * "_ ")
+    while tries is False and lives > 0:
         try:
             answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
             if answers in guessed:
                 raise ValueError ("\n Fraid not, you already tried that!")
-            if answer in picked_word:
-                clear_screen()
+            elif answers in picked_word:
+                print(f"\n Smashing it out the park {username} ")
+                guessed.append(answers)
         except ValueError as value_error:
                 print(value_error)
 
+play_game(hidden_word)

@@ -78,11 +78,13 @@ def play_game(hidden_word):
     picked_word = set(hidden_word)
     print(len(hidden_word) * "_ ")
     guessed = []
-    lives = 6 
+    lives_remaining = 6 
     tries = False
-    while tries is False and lives > 0:
+    while tries is False and lives_remaining > 0:
         try:
             answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
+            time.sleep(1)
+            clear_screen()
             if answers.isalpha():
                 if answers in guessed:
                     raise ValueError ("\n Fraid not, you already tried that!")
@@ -92,16 +94,13 @@ def play_game(hidden_word):
                 elif answers in picked_word:
                     print(f"\n Smashing it out the park {username} ")
                     guessed.append(answers)
-                    time.sleep(3.5)
-                    clear_screen()
-
+                    
                 elif answers not in hidden_word:
                     guessed.append(answers)
-                    lives -= 1
-                    print(f"Ouch so close and yet so far, you loose a limb! You have {lives} tries remaining")
-                    time.sleep(3.5)
-                    clear_screen()
-
+                    lives_remaining -= 1
+                    print(f"Ouch so close and yet so far, you loose a limb! You have {lives_remaining} tries remaining!")
+                    draw_hangman(lives_remaining)
+                    
             else:
                 raise ValueError("Hang on thats not a letter!")
         except ValueError as value_error:

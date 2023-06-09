@@ -73,6 +73,15 @@ hidden_word = pick_random_word()
 print(hidden_word) 
 """REMOVE AFTER BUILDING PLAYGAME FUNC"""
 
+def replay():
+    replay = input("Would you like to try again? Enter Y/N").upper()
+    if replay == "Y":
+        clear_screen()
+        play_game(hidden_word)
+    else:
+        clear_screen()
+        print("Well thanks for playing! have a lovely day")
+
 
 def play_game(hidden_word):
     picked_word = list(hidden_word)
@@ -116,6 +125,8 @@ def play_game(hidden_word):
     if lives_remaining == 0:
         clear_screen()
         print("You loose \n")
-        input("Would you like to try again?")
+        replay()
 
 play_game(hidden_word)
+
+

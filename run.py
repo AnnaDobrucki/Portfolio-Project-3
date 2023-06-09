@@ -33,7 +33,6 @@ def beginning_intro():
                         print("▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
                         print("▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀ \n")
                         break
-                        # MAKE SURE TO ADD FUNCTION TO START GAME
             elif ready =="N":
                     clear_screen()
                     print("That's a shame, come on back when you're ready...")
@@ -60,7 +59,7 @@ def username():
             input("Let's get going! Please press enter and see how many letters there are to guess...")
             return username
 
-username()
+name = username()
 
 def pick_random_word():
     """
@@ -76,7 +75,7 @@ print(hidden_word)
 
 
 def play_game(hidden_word):
-    picked_word = set(hidden_word)
+    picked_word = list(hidden_word)
     print(len(hidden_word) * "_ ")
     guessed = []
     correct_answers = []
@@ -94,7 +93,7 @@ def play_game(hidden_word):
                     clear_screen()
 
                 elif answers in picked_word:
-                    print(f"\n Smashing it out the park {username} \n ")
+                    print(f"\n Smashing it out the park {name} \n ")
                     guessed.append(answers)
                     correct_answers.append(answers)
                     print(f"So far you have guessed these correct letters {correct_answers}")
@@ -110,5 +109,13 @@ def play_game(hidden_word):
                 raise ValueError("Hang on we need only one letter, and remember no numbers either!")
         except ValueError as value_error:
                 print(value_error)
+        
+        if tries:
+            print("\n... I didn't expect that to happen, you're not as "
+              "dumb as you look. Well done.\n")
+    if lives_remaining == 0:
+        clear_screen()
+        print("You loose \n")
+        input("Would you like to try again?")
 
 play_game(hidden_word)

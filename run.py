@@ -31,7 +31,7 @@ def beginning_intro():
                         clear_screen()
                         print("▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▒█░▒█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄")
                         print("▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
-                        print("▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀")
+                        print("▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀ \n")
                         break
                         # MAKE SURE TO ADD FUNCTION TO START GAME
             elif ready =="N":
@@ -79,6 +79,7 @@ def play_game(hidden_word):
     picked_word = set(hidden_word)
     print(len(hidden_word) * "_ ")
     guessed = []
+    correct_answers = []
     lives_remaining = 6 
     tries = False
     while tries is False and lives_remaining > 0:
@@ -93,8 +94,10 @@ def play_game(hidden_word):
                     clear_screen()
 
                 elif answers in picked_word:
-                    print(f"\n Smashing it out the park {username} ")
+                    print(f"\n Smashing it out the park {username} \n ")
                     guessed.append(answers)
+                    correct_answers.append(answers)
+                    print(f"So far you have guessed these correct letters {correct_answers}")
                     
                 elif answers not in hidden_word:
                     guessed.append(answers)

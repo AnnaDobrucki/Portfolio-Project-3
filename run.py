@@ -71,7 +71,8 @@ def pick_random_word():
     return word.upper()
 
 hidden_word = pick_random_word()
-print(hidden_word)
+print(hidden_word) 
+"""REMOVE AFTER BUILDING PLAYGAME FUNC"""
 
 
 def play_game(hidden_word):
@@ -85,7 +86,7 @@ def play_game(hidden_word):
             answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
             time.sleep(1)
             clear_screen()
-            if answers.isalpha():
+            if answers.isalpha and len(answers) == 1:
                 if answers in guessed:
                     raise ValueError ("\n Fraid not, you already tried that!")
                     time.sleep(2)
@@ -103,7 +104,7 @@ def play_game(hidden_word):
                     print(f"So far you have used these {guessed}")
                     
             else:
-                raise ValueError("Hang on thats not a letter!")
+                raise ValueError("Hang on we need only one letter, and remember no numbers either!")
         except ValueError as value_error:
                 print(value_error)
 

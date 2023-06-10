@@ -1,4 +1,4 @@
-from utility import clear_screen, draw_hangman, random, string, gspread, os, time
+from utility import clear_screen, draw_hangman, random, string, gspread, os, time, user_lost, user_win
 from google.oauth2.service_account import Credentials
 
 
@@ -74,17 +74,18 @@ print(hidden_word)
 """REMOVE AFTER BUILDING PLAYGAME FUNC"""
 
 def replay():
-    replay = input("Would you like to try again? Enter Y/N").upper()
+    replay = input(" \nWould you like to try again? Enter Y/N").upper()
     if replay == "Y":
         clear_screen()
         play_game(hidden_word)
     else:
         clear_screen()
-        print("Well thanks for playing! have a lovely day")
+        print("Well thanks for playing! Have a lovely day.")
 
 
 def play_game(hidden_word):
     picked_word = list(hidden_word)
+    print("The length of the word is below")
     print(len(hidden_word) * "_ ")
     guessed = []
     correct_answers = []
@@ -102,7 +103,7 @@ def play_game(hidden_word):
                     clear_screen()
 
                 elif answers in picked_word:
-                    print(f"\n Smashing it out the park {name} \n ")
+                    print(f"\n Smashing it out the park {name}! KEEP GOING! \n ")
                     guessed.append(answers)
                     correct_answers.append(answers)
                     print(f"So far you have guessed these correct letters {correct_answers}")
@@ -124,7 +125,7 @@ def play_game(hidden_word):
               "dumb as you look. Well done.\n")
     if lives_remaining == 0:
         clear_screen()
-        print("You loose \n")
+        user_lost()
         replay()
 
 play_game(hidden_word)

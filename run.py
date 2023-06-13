@@ -87,6 +87,7 @@ def play_game(hidden_word):
     picked_word = list(hidden_word)
     print("The length of the word is below")
     print(len(hidden_word) * "_ ")
+    word_arragement = "_" * len(hidden_word)
     guessed = []
     correct_answers = []
     lives_remaining = 6 
@@ -107,6 +108,13 @@ def play_game(hidden_word):
                     guessed.append(answers)
                     correct_answers.append(answers)
                     print(f"So far you have guessed these correct letters {correct_answers}")
+                    hidden_word_list = list(word_arragement)
+                    indices = [i for i, letter in enumerate(hidden_word) if letter == answers]
+                    for index in indices:
+                        hidden_word_list[index] = answers
+                    word_arragement = "".join(hidden_word_list)
+                    if "_" not in word_arragement:
+                        tries = True
                     
                 elif answers not in hidden_word:
                     guessed.append(answers)
@@ -114,15 +122,16 @@ def play_game(hidden_word):
                     print(f"Ouch so close and yet so far, you loose a limb! You have {lives_remaining} tries remaining! \n")
                     draw_hangman(lives_remaining)
                     print(f"So far you have used these {guessed}")
-                    
+                
             else:
                 raise ValueError("Hang on we need only one letter, and remember no numbers either!")
         except ValueError as value_error:
                 print(value_error)
         
-        if tries:
-            print("\n... I didn't expect that to happen, you're not as "
-              "dumb as you look. Well done.\n")
+    if tries:
+        clear_screen()
+        user_win()
+        replay()
     if lives_remaining == 0:
         clear_screen()
         user_lost()

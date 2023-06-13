@@ -74,13 +74,17 @@ print(hidden_word)
 """REMOVE AFTER BUILDING PLAYGAME FUNC"""
 
 def replay():
-    replay = input(" \nWould you like to try again? Enter Y/N").upper()
-    if replay == "Y":
-        clear_screen()
-        play_game(hidden_word)
-    else:
-        clear_screen()
-        print("Well thanks for playing! Have a lovely day.")
+    while True:
+        replay = input(" \nWould you like to try again? Enter Y/N").upper()
+        if replay == "Y":
+            clear_screen()
+            play_game(hidden_word)
+
+        ###elif replay not in ("Y","N"):
+            ###raise ValueError("Oops, please answer with Y or N!")
+        else:
+            clear_screen()
+            print("Well thanks for playing! Have a lovely day.")
 
 
 def play_game(hidden_word):
@@ -128,13 +132,25 @@ def play_game(hidden_word):
         except ValueError as value_error:
                 print(value_error)
         
+        current = ""
+        if tries is False:
+            for letter in hidden_word:
+                if letter in answers:
+                    current += letter
+                else:
+                    current += "_ "
+            print(current)
+            
+        
     if tries:
         clear_screen()
         user_win()
+        print(f"You were right the answer was {hidden_word}!")
         replay()
     if lives_remaining == 0:
         clear_screen()
         user_lost()
+        print(f"Oops you lost this time! In'm afraid the word we were looking for was {hidden_word}")
         replay()
 
 play_game(hidden_word)

@@ -33,7 +33,7 @@ def beginning_intro():
                         print("▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
                         print("▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀ \n")
                         break
-            elif ready =="N":
+            elif ready == "N":
                     clear_screen()
                     print("That's a shame, come on back when you're ready...")
         except ValueError as value_error:
@@ -96,7 +96,7 @@ def play_game(hidden_word):
             answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
             time.sleep(1)
             clear_screen()
-            if answers.isalpha and len(answers) == 1:
+            if answers.isalpha() and len(answers) == 1:
                 if answers in guessed:
                     raise ValueError ("\n Fraid not, you already tried that!")
                     time.sleep(2)

@@ -15,7 +15,7 @@ SHEET = GSPREAD_CLIENT.open('Hangman_P_3')
 score = SHEET.worksheet("Scoreboard")
 
 data = score.get_all_values()
-print(data)
+
 
 def beginning_intro():
     """
@@ -40,8 +40,6 @@ def beginning_intro():
                 print(value_error)
     
 
-beginning_intro()
-
 def username():
     """
     Function to add username for use in scoreboards
@@ -59,8 +57,6 @@ def username():
             input("Let's get going! Please press enter and see how many letters there are to guess...")
             return username
 
-name = username()
-
 def pick_random_word():
     """
     Create a list of random words to be guessed for user
@@ -69,8 +65,7 @@ def pick_random_word():
     word = random.choice(WORDS)
     return word.upper()
 
-hidden_word = pick_random_word()
-print(hidden_word) 
+"""print(hidden_word)"""
 """REMOVE AFTER BUILDING PLAYGAME FUNC"""
 
 def replay():
@@ -153,6 +148,13 @@ def play_game(hidden_word):
         print(f"Oops you lost this time! In'm afraid the word we were looking for was {hidden_word}")
         replay()
 
-play_game(hidden_word)
 
 
+def main():
+    beginning_intro()
+    name = username()
+    pick_random_word()
+    hidden_word = pick_random_word()
+    play_game(hidden_word)
+
+main()

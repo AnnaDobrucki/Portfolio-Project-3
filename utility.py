@@ -18,7 +18,7 @@ def draw_hangman(lives_remaining):
     Hangman visual according to lives remaining.
     """
     if lives_remaining == 6:
-        print('''
+        print(Fore.YELLOW + '''
                 +---+
                 |   |
                     |
@@ -27,7 +27,7 @@ def draw_hangman(lives_remaining):
                     |
                 =========''')
     elif lives_remaining == 5:
-        print(
+        print(Fore.MAGENTA +
             '''
                 +---+
                 |   |
@@ -37,7 +37,7 @@ def draw_hangman(lives_remaining):
                     |
                 =========''')
     elif lives_remaining == 4:
-        print(
+        print(Fore.LIGHTBLUE_EX +
             '''
                 +---+
                 |   |
@@ -47,7 +47,8 @@ def draw_hangman(lives_remaining):
                     |
                 =========''')
     elif lives_remaining == 3:
-        print('''
+        print(Fore.BLUE +
+            '''
                 +---+
                 |   |
                 O   |
@@ -56,7 +57,8 @@ def draw_hangman(lives_remaining):
                     |
                 =========''')
     elif lives_remaining == 2:
-        print('''
+        print(Fore.LIGHTRED_EX +
+            '''
                 +---+
                 |   |
                 O   |
@@ -65,7 +67,8 @@ def draw_hangman(lives_remaining):
                     |
                 =========''')
     elif lives_remaining == 1:
-        print('''
+        print(Fore.CYAN +
+            '''
                 +---+
                 |   |
                 O   |
@@ -74,7 +77,8 @@ def draw_hangman(lives_remaining):
                     |
                 =========''')
     elif lives_remaining == 0:
-        print('''
+        print(Fore.RED +
+            '''
                 +---+
                 |   |
                 O   |

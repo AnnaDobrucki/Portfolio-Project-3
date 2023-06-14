@@ -86,11 +86,11 @@ def replay():
                 play_game(hidden_word)
 
             elif replay not in ("Y","N"):
-                raise ValueError("Oops, please answer with Y or N!")
+                raise ValueError(Fore.YELLOW + "Oops, please answer with Y or N!")
 
             else:
                 clear_screen()
-                print("Well thanks for playing! Have a lovely day.")
+                print(Fore.BLUE +"Well thanks for playing! Have a lovely day.")
                 break
 
         except ValueError as value_error:
@@ -116,12 +116,12 @@ def play_game(hidden_word):
             clear_screen()
             if answers.isalpha() and len(answers) == 1:
                 if answers in guessed:
-                    raise ValueError ("\n Fraid not, you already tried that!")
+                    raise ValueError (Fore.YELLOW +"\n Fraid not, you already tried that!")
                     time.sleep(2)
                     clear_screen()
             ### Checks user answers and iterrates through to see if word has been completed ###
                 elif answers in picked_word:
-                    print(f"\n Smashing it out the park! KEEP GOING! \n ")
+                    print(Fore.GREEN + "\n Smashing it out the park! KEEP GOING! \n ")
                     guessed.append(answers)
                     correct_answers.append(answers)
                     print(f"So far you have guessed these correct letters {correct_answers}")
@@ -153,7 +153,7 @@ def play_game(hidden_word):
                     current += letter
                 else:
                     current += " _"
-            print(current)
+            print(Fore.BLUE + current)
             
     ### If statement for win/ loose outcomes ###
     if tries:

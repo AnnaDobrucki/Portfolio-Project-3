@@ -3,6 +3,9 @@ import string
 import gspread
 import os
 import time
+import colorama
+from colorama import Fore
+colorama.init(autoreset=True)
 
 def clear_screen():
     """
@@ -83,13 +86,13 @@ def draw_hangman(lives_remaining):
 
 
 def user_lost():
-    print('''
+    print(Fore.RED + '''
                 ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░░ █▀▀█ █▀▀ ▀▀█▀▀ █ 
                 ▒█▄▄▄█ █░░█ █░░█ 　 ▒█░░░ █░░█ ▀▀█ ░░█░░ ▀ 
                 ░░▒█░░ ▀▀▀▀ ░▀▀▀ 　 ▒█▄▄█ ▀▀▀▀ ▀▀▀ ░░▀░░ ▄ \n''')
 
 def user_win():
-    print('''
+    print(Fore.GREEN + '''
 
                 ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░▒█ █▀▀█ █▀▀▄ 
                 ▒█▄▄▄█ █░░█ █░░█ 　 ▒█▒█▒█ █░░█ █░░█ 

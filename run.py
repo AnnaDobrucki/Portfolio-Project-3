@@ -61,7 +61,7 @@ def pick_random_word():
     """
     Create a list of random words to be guessed for user
     """
-    WORDS = ("python", "javascript", "needed", "carrying", "answer", "celestial", "piano", "dragons")
+    WORDS = ("python", "javascript", "needed", "hangman", "answer", "celestial", "piano", "dragons", "stars", "ring", "green")
     word = random.choice(WORDS)
     return word.upper()
 
@@ -70,17 +70,21 @@ def pick_random_word():
 
 def replay():
     while True:
-        replay = input(" \nWould you like to try again? Enter Y/N").upper()
-        if replay == "Y":
-            clear_screen()
-            play_game(hidden_word)
+        try:
+            replay = input(" \nWould you like to try again? Enter Y/N").upper()
+            if replay == "Y":
+                clear_screen()
+                hidden_word = pick_random_word()
+                play_game(hidden_word)
 
-        ###elif replay not in ("Y","N"):
-            ###raise ValueError("Oops, please answer with Y or N!")
-        else:
-            clear_screen()
-            print("Well thanks for playing! Have a lovely day.")
-
+            elif replay not in ("Y","N"):
+                raise ValueError("Oops, please answer with Y or N!")
+            else:
+                clear_screen()
+                print("Well thanks for playing! Have a lovely day.")
+                break
+        except ValueError as value_error:
+                print(value_error)
 
 def play_game(hidden_word):
     picked_word = list(hidden_word)
@@ -103,7 +107,7 @@ def play_game(hidden_word):
                     clear_screen()
 
                 elif answers in picked_word:
-                    print(f"\n Smashing it out the park {name}! KEEP GOING! \n ")
+                    print(f"\n Smashing it out the park {username}! KEEP GOING! \n ")
                     guessed.append(answers)
                     correct_answers.append(answers)
                     print(f"So far you have guessed these correct letters {correct_answers}")
@@ -133,7 +137,7 @@ def play_game(hidden_word):
                 if letter in answers:
                     current += letter
                 else:
-                    current += "_ "
+                    current += " _"
             print(current)
             
         
@@ -148,15 +152,12 @@ def play_game(hidden_word):
         print(f"Oops you lost this time! In'm afraid the word we were looking for was {hidden_word}")
         replay()
 
-"""test"""
-
 def main():
     beginning_intro()
-    name = username()
+    username()
     pick_random_word()
     hidden_word = pick_random_word()
     play_game(hidden_word)
 
 main()
 
-""" extra try """

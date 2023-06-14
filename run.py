@@ -21,6 +21,7 @@ score = SHEET.worksheet("Scoreboard")
 data = score.get_all_values()
 points = 0
 print(f"here are {points}")
+print(score.get_all_values())
 
 
 def beginning_intro():
@@ -119,6 +120,7 @@ def play_game(hidden_word):
                     raise ValueError (Fore.YELLOW +"\n Fraid not, you already tried that!")
                     time.sleep(2)
                     clear_screen()
+
             ### Checks user answers and iterrates through to see if word has been completed ###
                 elif answers in picked_word:
                     print(Fore.GREEN + "\n Smashing it out the park! KEEP GOING! \n ")
@@ -143,8 +145,10 @@ def play_game(hidden_word):
                 
             else:
                 raise ValueError(Fore.YELLOW + "Hang on we need only one letter, and remember no numbers either!")
+
         except ValueError as value_error:
                 print(value_error)
+
         ### Printing the answers onto screen for user ###
         current = ""
         if tries is False:
@@ -175,8 +179,8 @@ def play_game(hidden_word):
 
 
 def update_score(all_points):
+    print(f"Here are the points you managed to score! {all_points}")
     score.append_row(all_points)
-    print(f"Test this")
 
 def main():
     beginning_intro()
@@ -184,8 +188,7 @@ def main():
     pick_random_word()
     hidden_word = pick_random_word()
     all_points = play_game(hidden_word)
-    update_score(all_points)
+    update_score([all_points])
     
-
 main()
 

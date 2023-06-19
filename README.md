@@ -15,6 +15,9 @@ Using python as my main platform I have built this game using both Gitpod and He
 ## Project Goals
 Overall Hangman is a well known game 
 
+I built a flow chart to begin with to help me with what fucntions I needed to build anc what order I should build them where possible. I used [lucidchart](https://www.lucidchart.com/pages/) to create the following:
+![Lucidchart Flowchart](./documentation/features/flowchart_hangman.png "Flowchart")
+
 
 ### User Goals
 - Create an ease of use for the player.
@@ -24,6 +27,8 @@ Overall Hangman is a well known game
 
 ## Features 
 Key Features within this project:
+1. I have made a scoreboard that adds a username and a point scoreing system to add to the challenge of this game.
+2. I wanted the game to have a clearing function, so as to not crowd the terminal, so I ended up also adding in a timed element to allow the user to read the terminal but not wipe the screen too quickly. 
 
 
 ## Design 

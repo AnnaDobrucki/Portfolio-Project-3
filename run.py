@@ -51,14 +51,14 @@ def username():
     """
     Function to add username for use in scoreboards
     """
+    global username 
     while True:
         username = input("Give us a name for the scoreboard! \n")
 
         if username.isalnum() is not True:
             clear_screen()
             print(Fore.RED + "Sorry we need letters and numbers for this one!")
-            continue
-
+            
         else:
             clear_screen()
             print(Fore.BLUE + f"Hi {username}, you must guess the word within 6 goes or loose a limb each loss. \n")
@@ -69,7 +69,7 @@ def pick_random_word():
     """
     Create a list of random words to be guessed for user
     """
-    WORDS = ("python", "javascript", "needed", "hangman", "answer", "celestial", "piano", "dragons", "stars", "ring", "green")
+    WORDS = ("python", "javascript", "needed", "hangman", "answer", "celestial", "piano", "dragons", "stars", "ring", "green","blessing")
     word = random.choice(WORDS)
     return word.upper()
 
@@ -84,6 +84,7 @@ def replay():
                 play_game(hidden_word)
 
             elif replay not in ("Y","N"):
+                clear_screen()
                 raise ValueError(Fore.YELLOW + "Oops, please answer with Y or N!")
 
             else:
@@ -175,9 +176,9 @@ def play_game(hidden_word):
         return points
         
 
-def update_score(name, all_points):
+def update_score(scores, all_points):
     print(f"\n Here are the points you managed to score! {all_points}")
-    score.append_row(name, all_points)
+    score.append_row(scores)
 
 def main():
     beginning_intro()
@@ -185,7 +186,8 @@ def main():
     pick_random_word()
     hidden_word = pick_random_word()
     all_points = play_game(hidden_word)
-    update_score([name], [all_points])
+    scores = [name, all_points]
+    update_score(scores, all_points)
     
 main()
 

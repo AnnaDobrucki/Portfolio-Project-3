@@ -20,8 +20,6 @@ SHEET = GSPREAD_CLIENT.open('Hangman_P_3')
 score = SHEET.worksheet("Scoreboard")
 data = score.get_all_values()
 points = 0
-print(f"here are {points}")
-print(score.get_all_values())
 
 
 def beginning_intro():
@@ -35,7 +33,6 @@ def beginning_intro():
                     raise ValueError("Oops, please answer with Y or N!")
 
             if ready == "Y":
-                        print("Awesome, let's get started \n")
                         clear_screen()
                         print(Fore.GREEN + "▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▒█░▒█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄")
                         print(Fore.GREEN + "▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
@@ -49,7 +46,7 @@ def beginning_intro():
         except ValueError as value_error:
                 print(value_error)
     
-username = ''
+
 def username():
     """
     Function to add username for use in scoreboards
@@ -112,6 +109,7 @@ def play_game(hidden_word):
 
     while tries is False and lives_remaining > 0:
         try:
+            ### Creates input option for letters and clears the screen after it has been entered###
             answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
             time.sleep(1)
             clear_screen()
@@ -163,7 +161,7 @@ def play_game(hidden_word):
     if tries:
         clear_screen()
         user_win()
-        points += 10 
+        points += 5
         print(f"You were right the answer was {hidden_word}!")
         replay()
         return points
@@ -171,24 +169,23 @@ def play_game(hidden_word):
     if lives_remaining == 0:
         clear_screen()
         user_lost()
-        points -= 10 
+        points -= 5
         print(f"Oops you lost this time! In'm afraid the word we were looking for was {hidden_word}")
         replay()
         return points
         
 
-
-def update_score(all_points):
-    print(f"Here are the points you managed to score! {all_points}")
-    score.append_row(all_points)
+def update_score(name, all_points):
+    print(f"\n Here are the points you managed to score! {all_points}")
+    score.append_row(name, all_points)
 
 def main():
     beginning_intro()
-    username()
+    name = username()
     pick_random_word()
     hidden_word = pick_random_word()
     all_points = play_game(hidden_word)
-    update_score([all_points])
+    update_score([name], [all_points])
     
 main()
 

@@ -1,7 +1,7 @@
 # Takes functions from utility.py, and imports creds
 
 from utility import clear_screen, draw_hangman, random,\
-     string, gspread, os, time, user_lost, user_win
+     gspread, time, user_lost, user_win
 from google.oauth2.service_account import Credentials
 import sys
 import colorama

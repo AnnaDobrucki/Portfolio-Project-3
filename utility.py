@@ -64,7 +64,7 @@ def draw_hangman(lives_remaining):
                 +---+
                 |   |
                 O   |
-               /|\  |
+               /|\\  |
                     |
                     |
                 =========''')
@@ -74,7 +74,7 @@ def draw_hangman(lives_remaining):
                 +---+
                 |   |
                 O   |
-               /|\  |
+               /|\\  |
                /    |
                     |
                 =========''')
@@ -84,11 +84,10 @@ def draw_hangman(lives_remaining):
                 +---+
                 |   |
                 O   |
-               /|\  |
-               / \  |
+               /|\\  |
+               / \\ |
                     |
                 =========''')
-
 
 
 def user_lost():

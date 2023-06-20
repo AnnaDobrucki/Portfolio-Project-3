@@ -33,7 +33,7 @@ def beginning_intro():
         try:
             ready = input("\nAhoy there folks! "
                           "You ready to play some hangman? --> Y/N?").upper()
-            if ready not in ("Y","N"):
+            if ready not in ("Y", "N"):
                 raise ValueError("Oops, please answer with Y or N!")
 
             if ready == "Y":
@@ -46,7 +46,7 @@ def beginning_intro():
             else:
                 clear_screen()
                 print("That's a shame, come on back when you're ready...")
-        
+
         except ValueError as value_error:
             print(value_error)
 
@@ -108,8 +108,8 @@ def play_game(hidden_word):
             clear_screen()
             if answers.isalpha() and len(answers) == 1:
                 if answers in guessed:
-                    raise ValueError (Fore.YELLOW + "\n Fraid not"
-                                      ", you already tried that!")
+                    raise ValueError(Fore.YELLOW + "\n Fraid not"
+                                     ", you already tried that!")
                     time.sleep(2)
                     clear_screen()
 

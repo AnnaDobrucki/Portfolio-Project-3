@@ -2,10 +2,12 @@
 
 from utility import clear_screen, draw_hangman, random, string, gspread, os, time, user_lost, user_win
 from google.oauth2.service_account import Credentials
+import sys 
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
 
+debug = "--debug" in sys.argv
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -65,12 +67,15 @@ def username():
             input("Let's get going! Please press enter and see how many letters there are to guess...")
             return username
 
+
 def pick_random_word():
     """
     Create a list of random words to be guessed for user
     """
     WORDS = ("python", "javascript", "needed", "hangman", "answer", "celestial", "piano", "dragons", "stars", "ring", "green","blessing")
     word = random.choice(WORDS)
+    if debug:
+        print(word)
     return word.upper()
 
 
@@ -171,20 +176,18 @@ def replay():
 
             else:
                 clear_screen()
-                print(Fore.BLUE +"Well thanks for playing! Have a lovely day.")
+                print(Fore.BLUE +"Well thanks for playing! Have a lovely day.\n")
 
 
 def update_score(scores, all_points):
-    print(f"\n Here are the points you managed to score! {all_points}")
+    print(f"Here are the points you managed to score! {all_points}")
     score.append_row(scores)
 
 
 def main():
     beginning_intro()
     name = username()
-    pick_random_word()
     hidden_word = pick_random_word()
-    print(hidden_word)
     all_points = play_game(hidden_word)
     scores = [name, all_points]
     update_score(scores, all_points)

@@ -119,8 +119,11 @@ def play_game(hidden_word):
                           " KEEP GOING! \n ")
                     guessed.append(answers)
                     correct_answers.append(answers)
-                    print(f"So far you have guessed these correct"
-                          f" letters {correct_answers}")
+                    print("So far you have guessed these correct \n")
+                    for item in correct_answers:
+                        print(item, end=" ")
+                    print(Fore.BLUE + "\n Don't stop now!")
+                          
                     hidden_word_list = list(word_arragement)
                     indices = [i for i, letter in enumerate(hidden_word)
                                if letter == answers]
@@ -137,7 +140,11 @@ def play_game(hidden_word):
                     print(f"Ouch so close and yet so far, you loose a limb!"
                           f" You have {lives_remaining} tries remaining!\n")
                     draw_hangman(lives_remaining)
-                    print(f"So far you have used these {guessed}")
+                    print("So far you have used the words: \n")
+                    for item in guessed:
+                        print(item, end=" ")
+                    print(Fore.BLUE + "\n Care to try again?")
+                    
 
             else:
                 raise ValueError(Fore.YELLOW + "Hang on we need only one"

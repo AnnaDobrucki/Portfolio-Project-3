@@ -73,27 +73,6 @@ def pick_random_word():
     word = random.choice(WORDS)
     return word.upper()
 
-def replay():
-    ### Replay function to allow user to end or try again with game ###
-    while True:
-        try:
-            replay = input(" \nWould you like to try again? Enter Y/N").upper()
-            if replay == "Y":
-                clear_screen()
-                hidden_word = pick_random_word()
-                play_game(hidden_word)
-
-            elif replay not in ("Y","N"):
-                clear_screen()
-                raise ValueError(Fore.YELLOW + "Oops, please answer with Y or N!")
-
-            else:
-                clear_screen()
-                print(Fore.BLUE +"Well thanks for playing! Have a lovely day.")
-                break
-
-        except ValueError as value_error:
-                print(value_error)
 
 def play_game(hidden_word):
     ### Function to start playing the game and show the length of the hidden word###
@@ -166,6 +145,7 @@ def play_game(hidden_word):
         print(f"You were right the answer was {hidden_word}!")
         replay()
         return points
+       
 
     if lives_remaining == 0:
         clear_screen()
@@ -174,17 +154,37 @@ def play_game(hidden_word):
         print(f"Oops you lost this time! In'm afraid the word we were looking for was {hidden_word}")
         replay()
         return points
-        
+
+
+def replay():
+    ### Replay function to allow user to end or try again with game ###
+            response = input(" \nWould you like to try again? Enter Y/N").upper()
+            if response == "Y":
+                clear_screen()
+                hidden_word = pick_random_word()
+                play_game(hidden_word)
+            
+            elif response not in ("Y","N"):
+                clear_screen()
+                print(Fore.YELLOW + "Oops, please answer with Y or N!")
+                replay()
+
+            else:
+                clear_screen()
+                print(Fore.BLUE +"Well thanks for playing! Have a lovely day.")
+
 
 def update_score(scores, all_points):
     print(f"\n Here are the points you managed to score! {all_points}")
     score.append_row(scores)
+
 
 def main():
     beginning_intro()
     name = username()
     pick_random_word()
     hidden_word = pick_random_word()
+    print(hidden_word)
     all_points = play_game(hidden_word)
     scores = [name, all_points]
     update_score(scores, all_points)

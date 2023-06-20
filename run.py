@@ -1,8 +1,9 @@
-### Takes functions from utility.py, and imports creds ###
+# Takes functions from utility.py, and imports creds
 
-from utility import clear_screen, draw_hangman, random, string, gspread, os, time, user_lost, user_win
+from utility import clear_screen, draw_hangman, random,\
+     string, gspread, os, time, user_lost, user_win
 from google.oauth2.service_account import Credentials
-import sys 
+import sys
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
@@ -30,41 +31,44 @@ def beginning_intro():
     """
     while True:
         try:
-            ready = input("\nAhoy there folks! You ready to play some hangman? --> Y/N?").upper()
+            ready = input("\nAhoy there folks! "
+                          "You ready to play some hangman? --> Y/N?").upper()
             if ready not in ("Y","N"):
-                    raise ValueError("Oops, please answer with Y or N!")
+                raise ValueError("Oops, please answer with Y or N!")
 
             if ready == "Y":
-                        clear_screen()
-                        print(Fore.GREEN + "▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▒█░▒█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄")
-                        print(Fore.GREEN + "▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
-                        print(Fore.GREEN + "▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀ \n")
-                        break
+                clear_screen()
+                print(Fore.GREEN + "▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▒█░▒█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄")
+                print(Fore.GREEN + "▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ▒█▀▀█ █▄▄█ █░░█ █░▀█ █░▀░█ █▄▄█ █░░█")
+                print(Fore.GREEN + "▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ▒█░▒█ ▀░░▀ ▀░░▀ ▀▀▀▀ ▀░░░▀ ▀░░▀ ▀░░▀ \n")
+                break
 
-            elif ready == "N":
-                    clear_screen()
-                    print("That's a shame, come on back when you're ready...")
-
+            else:
+                clear_screen()
+                print("That's a shame, come on back when you're ready...")
+        
         except ValueError as value_error:
-                print(value_error)
-    
+            print(value_error)
+
 
 def username():
     """
     Function to add username for use in scoreboards
     """
-    global username 
+    global username
     while True:
         username = input("Give us a name for the scoreboard! \n")
 
         if username.isalnum() is not True:
             clear_screen()
             print(Fore.RED + "Sorry we need letters and numbers for this one!")
-            
+
         else:
             clear_screen()
-            print(Fore.BLUE + f"Hi {username}, you must guess the word within 6 goes or loose a limb each loss. \n")
-            input("Let's get going! Please press enter and see how many letters there are to guess...")
+            print(Fore.BLUE + f"Hi {username}, you must guess the word"
+                  " within 6 goes or loose a limb each loss. \n")
+            input("Let's get going! Please press enter and see how"
+                  " many letters there are to guess...")
             return username
 
 
@@ -72,7 +76,9 @@ def pick_random_word():
     """
     Create a list of random words to be guessed for user
     """
-    WORDS = ("python", "javascript", "needed", "hangman", "answer", "celestial", "piano", "dragons", "stars", "ring", "green","blessing")
+    WORDS = ("python", "javascript", "needed", "hangman", "answer",
+             "celestial", "piano", "dragons", "stars",
+             "ring", "green", "blessing")
     word = random.choice(WORDS)
     if debug:
         print(word)
@@ -80,7 +86,7 @@ def pick_random_word():
 
 
 def play_game(hidden_word):
-    ### Function to start playing the game and show the length of the hidden word###
+    # Function to start playing the game and show the length of the hidden word
     picked_word = list(hidden_word)
     global points
 
@@ -89,50 +95,59 @@ def play_game(hidden_word):
     word_arragement = "_" * len(hidden_word)
     guessed = []
     correct_answers = []
-    lives_remaining = 6 
+    lives_remaining = 6
     tries = False
 
     while tries is False and lives_remaining > 0:
         try:
-            ### Creates input option for letters and clears the screen after it has been entered###
-            answers = input("\n Time to guess a letter, what'll it be this time? \n").upper()
+            # Creates input option for letters and clears
+            # the screen after it has been entered
+            answers = input("\n Time to guess a letter, what'll"
+                            " it be this time? \n").upper()
             time.sleep(1)
             clear_screen()
             if answers.isalpha() and len(answers) == 1:
                 if answers in guessed:
-                    raise ValueError (Fore.YELLOW +"\n Fraid not, you already tried that!")
+                    raise ValueError (Fore.YELLOW + "\n Fraid not"
+                                      ", you already tried that!")
                     time.sleep(2)
                     clear_screen()
 
-            ### Checks user answers and iterrates through to see if word has been completed ###
+# Checks user answers and iterrates through to see if word has been completed #
                 elif answers in picked_word:
-                    print(Fore.GREEN + "\n Smashing it out the park! KEEP GOING! \n ")
+                    print(Fore.GREEN + "\n Smashing it out the park!"
+                          " KEEP GOING! \n ")
                     guessed.append(answers)
                     correct_answers.append(answers)
-                    print(f"So far you have guessed these correct letters {correct_answers}")
+                    print(f"So far you have guessed these correct"
+                          f" letters {correct_answers}")
                     hidden_word_list = list(word_arragement)
-                    indices = [i for i, letter in enumerate(hidden_word) if letter == answers]
+                    indices = [i for i, letter in enumerate(hidden_word)
+                               if letter == answers]
                     for index in indices:
                         hidden_word_list[index] = answers
                     word_arragement = "".join(hidden_word_list)
                     if "_" not in word_arragement:
                         tries = True
-                    
-            ### Checks if user entered wrong letter and keeps track of lives, until == 0 ###        
+
+# Checks if user entered wrong letter and keeps track of lives, until == 0
                 elif answers not in hidden_word:
                     guessed.append(answers)
                     lives_remaining -= 1
-                    print(f"Ouch so close and yet so far, you loose a limb! You have {lives_remaining} tries remaining! \n")
+                    print(f"Ouch so close and yet so far, you loose a limb!"
+                          f"You have {lives_remaining} tries remaining! \n")
                     draw_hangman(lives_remaining)
                     print(f"So far you have used these {guessed}")
-                
+
             else:
-                raise ValueError(Fore.YELLOW + "Hang on we need only one letter, and remember no numbers either!")
+                raise ValueError(Fore.YELLOW + "Hang on we need only one"
+                                               " letter, and remember no "
+                                               "numbers either!")
 
         except ValueError as value_error:
-                print(value_error)
+            print(value_error)
 
-        ### Printing the answers onto screen for user ###
+        # Printing the answers onto screen for user
         current = ""
         if tries is False:
             for letter in hidden_word:
@@ -141,8 +156,8 @@ def play_game(hidden_word):
                 else:
                     current += " _"
             print(Fore.BLUE + current)
-            
-    ### If statement for win/ loose outcomes ###
+
+    # If statement for win/ loose outcomes
     if tries:
         clear_screen()
         user_win()
@@ -150,33 +165,33 @@ def play_game(hidden_word):
         print(f"You were right the answer was {hidden_word}!")
         replay()
         return points
-       
 
     if lives_remaining == 0:
         clear_screen()
         user_lost()
         points -= 5
-        print(f"Oops you lost this time! In'm afraid the word we were looking for was {hidden_word}")
+        print(f"Oops you lost this time! In'm afraid the word we"
+              f"were looking for was {hidden_word}")
         replay()
         return points
 
 
 def replay():
-    ### Replay function to allow user to end or try again with game ###
-            response = input(" \nWould you like to try again? Enter Y/N").upper()
-            if response == "Y":
-                clear_screen()
-                hidden_word = pick_random_word()
-                play_game(hidden_word)
-            
-            elif response not in ("Y","N"):
-                clear_screen()
-                print(Fore.YELLOW + "Oops, please answer with Y or N!")
-                replay()
+    # Replay function to allow user to end or try again with game
+    response = input(" \nWould you like to try again? Enter Y/N").upper()
+    if response == "Y":
+        clear_screen()
+        hidden_word = pick_random_word()
+        play_game(hidden_word)
 
-            else:
-                clear_screen()
-                print(Fore.BLUE +"Well thanks for playing! Have a lovely day.\n")
+    elif response not in ("Y", "N"):
+        clear_screen()
+        print(Fore.YELLOW + "Oops, please answer with Y or N!")
+        replay()
+
+    else:
+        clear_screen()
+        print(Fore.BLUE + "Thanks for playing! Have a lovely day.\n")
 
 
 def update_score(scores, all_points):
@@ -191,6 +206,6 @@ def main():
     all_points = play_game(hidden_word)
     scores = [name, all_points]
     update_score(scores, all_points)
-    
-main()
 
+
+main()

@@ -7,11 +7,13 @@ import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
 
+
 def clear_screen():
     """
     Function to clear screen
     """
     os.system('clear')
+
 
 def draw_hangman(lives_remaining):
     """
@@ -28,7 +30,7 @@ def draw_hangman(lives_remaining):
                 =========''')
     elif lives_remaining == 5:
         print(Fore.MAGENTA +
-            '''
+              '''
                 +---+
                 |   |
                 O   |
@@ -38,7 +40,7 @@ def draw_hangman(lives_remaining):
                 =========''')
     elif lives_remaining == 4:
         print(Fore.LIGHTBLUE_EX +
-            '''
+              '''
                 +---+
                 |   |
                 O   |
@@ -48,7 +50,7 @@ def draw_hangman(lives_remaining):
                 =========''')
     elif lives_remaining == 3:
         print(Fore.BLUE +
-            '''
+              '''
                 +---+
                 |   |
                 O   |
@@ -58,7 +60,7 @@ def draw_hangman(lives_remaining):
                 =========''')
     elif lives_remaining == 2:
         print(Fore.LIGHTRED_EX +
-            '''
+              '''
                 +---+
                 |   |
                 O   |
@@ -68,7 +70,7 @@ def draw_hangman(lives_remaining):
                 =========''')
     elif lives_remaining == 1:
         print(Fore.CYAN +
-            '''
+              '''
                 +---+
                 |   |
                 O   |
@@ -78,7 +80,7 @@ def draw_hangman(lives_remaining):
                 =========''')
     elif lives_remaining == 0:
         print(Fore.RED +
-            '''
+              '''
                 +---+
                 |   |
                 O   |
@@ -91,13 +93,14 @@ def draw_hangman(lives_remaining):
 
 def user_lost():
     print(Fore.RED + '''
-                ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░░ █▀▀█ █▀▀ ▀▀█▀▀ █ 
-                ▒█▄▄▄█ █░░█ █░░█ 　 ▒█░░░ █░░█ ▀▀█ ░░█░░ ▀ 
+                ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░░ █▀▀█ █▀▀ ▀▀█▀▀ █
+                ▒█▄▄▄█ █░░█ █░░█ 　 ▒█░░░ █░░█ ▀▀█ ░░█░░ ▀
                 ░░▒█░░ ▀▀▀▀ ░▀▀▀ 　 ▒█▄▄█ ▀▀▀▀ ▀▀▀ ░░▀░░ ▄ \n''')
+
 
 def user_win():
     print(Fore.GREEN + '''
 
-                ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░▒█ █▀▀█ █▀▀▄ 
-                ▒█▄▄▄█ █░░█ █░░█ 　 ▒█▒█▒█ █░░█ █░░█ 
+                ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░▒█ █▀▀█ █▀▀▄
+                ▒█▄▄▄█ █░░█ █░░█ 　 ▒█▒█▒█ █░░█ █░░█
                 ░░▒█░░ ▀▀▀▀ ░▀▀▀ 　 ▒█▄▀▄█ ▀▀▀▀ ▀░░▀ \n''')

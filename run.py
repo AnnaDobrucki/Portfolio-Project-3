@@ -135,7 +135,7 @@ def play_game(hidden_word):
                     guessed.append(answers)
                     lives_remaining -= 1
                     print(f"Ouch so close and yet so far, you loose a limb!"
-                          f"You have {lives_remaining} tries remaining! \n")
+                          f" You have {lives_remaining} tries remaining!\n")
                     draw_hangman(lives_remaining)
                     print(f"So far you have used these {guessed}")
 

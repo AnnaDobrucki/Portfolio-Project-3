@@ -54,7 +54,12 @@
 |  Replay = "N" | Thank you message/ Calculate and revel scores/ Update Scoreboard | Pass
 |  Replay not "Y" or. "N" | Error Message/ Replay offered| Pass
 
+### Scoreboard
 
+| Test Description (Scoreboard)   | Expected Outcome | Actual Outcome |
+| ----------- | ----------- | ----- |
+| Username should be updated to scorebaord area | Updated after user is finished with game  | Pass
+| After win or loose scores are updated  | Scores show on google sheets in increments of 5| Pass
 
 
 ## Code Institue Linter Testing 

@@ -65,8 +65,12 @@ def username():
 
         else:
             clear_screen()
-            print(Fore.BLUE + f"Hi {username}, you must guess the word"
-                  " within 6 goes or loose a limb each loss. \n")
+            print(Fore.BLUE + f"Hi {username}, you must guess the word within"
+                  , Fore.WHITE + "6", Fore.BLUE + "goes or loose a "
+                  "limb each loss.\n")
+            print(Fore.GREEN + "Make sure to guess a singular letter, and" 
+                  " don't use a number.\n")
+            print(Fore.RED + "Good Luck Muhahahaha! \n")
             input("Let's get going! Please press enter and see how"
                   " many letters there are to guess...")
             return username

@@ -4,7 +4,7 @@ Using python as my main platform I have built this game using both Gitpod and He
 
 ## Index
 
-* [Project Goals](#project-goals)
+* [Project Goals](#project-goals) 
 * [Features](#features)
 * [Design](#design)
 * [Testing](#testing)
@@ -13,6 +13,7 @@ Using python as my main platform I have built this game using both Gitpod and He
 
 
 ## Project Goals
+When beginning to build this game I wanted to set out some straightforward goals to help with both building the code from the ground up, as well as things to aim for. I came up with the following:
 
 * To validate players choices through out.
 * To show where and how a player went right or wrong.
@@ -47,7 +48,7 @@ Key Features within this project:
 Whilst desgin for this project was less creative than past projects in terms of web desgin. I still wanted to give the project something to make it not look just like writing in a terminal. Ways in which I achieved this were:
 1. Using ASCII Art from [fsymbols](https://fsymbols.com/text-art/) I got the looks of the Hangman intro/WIN/LOOSE fonts to stand out and look impactful. 
 
-2. Creating the desgin for the loosing limbs hangman, to help the user visualise the Lives Lost, and keep track of hpw many tries they have left.
+2. Creating the desgin for the loosing limbs hangman, to help the user visualise the Lives Lost, and keep track of how many tries they have left. As well as making them colourful for visual aids, not to mention more entertaining. However I also realised that because of my clearscreen() it meant that colours were essential, wihtout them it became harder to see the progession of lives lost. 
 
 3. Using Colorama, after importing colours to help add definition for different lines of text. Helps to build tension for the user playing the game seeing colour progession. Found thanks to this helpful article [Colorama A Hidden Convenience](https://medium.com/analytics-vidhya/colorama-a-hidden-convinience-6fb22dc00835)
 

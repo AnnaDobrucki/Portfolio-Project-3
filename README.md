@@ -13,11 +13,14 @@ Using python as my main platform I have built this game using both Gitpod and He
 
 
 ## Project Goals
-Overall Hangman is a well known game 
 
-I built a flow chart to begin with to help me with what fucntions I needed to build anc what order I should build them where possible. I used [lucidchart](https://www.lucidchart.com/pages/) to create the following:
+* To validate players choices through out.
+* To show where and how a player went right or wrong.
+* To create a sense of competition with other users, and creating a scoreboard function.
+* Create direct dialouge to make the game straightforward for a user
+
+I built a flow chart to begin with to help me with what functions I needed to build and what order I should build them where possible. I used [lucidchart](https://www.lucidchart.com/pages/) to create the following:
 ![Lucidchart Flowchart](./documentation/features/flowchart_hangman.png "Flowchart")
-
 
 ### User Goals
 - Create an ease of use for the player.
@@ -27,8 +30,17 @@ I built a flow chart to begin with to help me with what fucntions I needed to bu
 
 ## Features 
 Key Features within this project:
-1. I have made a scoreboard that adds a username and a point scoreing system to add to the challenge of this game.
-2. I wanted the game to have a clearing function, so as to not crowd the terminal, so I ended up also adding in a timed element to allow the user to read the terminal but not wipe the screen too quickly. 
+
+1. I made a scoreboard that adds a username and a point scoreing system to add to the competitiveness of this game. I hoped that the thrill of seeing your name pop up was reminicent of older arcade games, and might users come back to play again, and see who has the highest score.
+![Scoreboard](./documentation/scoreboard_pics/scoreboard_hangman.png "Scoreboard")
+
+2. I wanted the game to have a clearing function, so as to not crowd the terminal. I ended up also adding in a timed element to allow the user to read the terminal but not wipe the screen too quickly. 
+
+3. After building the game and running through it a couple of times, I realised that playing a terminal based game can be quite dull with so much black and white space. I looked into how to create colours within the terminal to help elements pop out/ look interesting/ and align with my goal of ease of use. I imported Colorama which allowed me to achieve this.
+
+4. The game constiently tells the user what words they have correctly guessed or what words the have already used. 
+
+5. There is a "lives" counter that repeatedly tells the user how many guesses they have remaining. With, of course, the visual aid of "Hangman" loosing limbs every failed turn. In conjunction with a change of colour to aid visually for people with potential visual impairments. 
 
 
 ## Design 

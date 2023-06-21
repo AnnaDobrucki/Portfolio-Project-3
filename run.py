@@ -123,7 +123,7 @@ def play_game(hidden_word):
                     for item in correct_answers:
                         print(item, end=" ")
                     print(Fore.BLUE + "\n Don't stop now!")
-                          
+
                     hidden_word_list = list(word_arragement)
                     indices = [i for i, letter in enumerate(hidden_word)
                                if letter == answers]
@@ -144,7 +144,6 @@ def play_game(hidden_word):
                     for item in guessed:
                         print(item, end=" ")
                     print(Fore.BLUE + "\n Care to try again?")
-                    
 
             else:
                 raise ValueError(Fore.YELLOW + "Hang on we need only one"
@@ -178,7 +177,7 @@ def play_game(hidden_word):
         user_lost()
         points -= 5
         print(f"Oops you lost this time! In'm afraid the word we"
-              f"were looking for was {hidden_word}")
+              f" were looking for was {hidden_word}")
         replay()
         return points
 

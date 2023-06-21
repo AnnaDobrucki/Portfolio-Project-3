@@ -56,6 +56,8 @@ Key Features within this project:
 
 5. There is a "lives" counter that repeatedly tells the user how many guesses they have remaining. With, of course, the visual aid of "Hangman" loosing limbs every failed turn. In conjunction with a change of colour to aid visually for people with potential visual impairments. 
 
+6. I have made sure that validation is required through out the game, ranging from Username through to letters being picked rather than numbers.
+
 
 ## Design 
 Whilst desgin for this project was less creative than past projects in terms of web desgin. I still wanted to give the project something to make it not look just like writing in a terminal. Ways in which I achieved this were:

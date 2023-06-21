@@ -8,6 +8,7 @@ Using python as my main platform I have built this game using both Gitpod and He
 * [Features](#features)
 * [Design](#design)
 * [Testing](#testing)
+* [Languages, Frameworks & Libraries](#languages-frameworks--libraries)
 * [Deployment](#deployment)
 * [Credits](#credits)
 
@@ -20,7 +21,17 @@ When beginning to build this game I wanted to set out some straightforward goals
 * To create a sense of competition with other users, and creating a scoreboard function.
 * Create direct dialouge to make the game straightforward for a user
 
-I built a flow chart to begin with to help me with what functions I needed to build and what order I should build them where possible. I used [lucidchart](https://www.lucidchart.com/pages/) to create the following:
+### How to Play Hangman 
+For people who dont know, here's how you play Hangman:
+* Enter your username 
+* Read the rules - You have 6 attempts of guessing a random word. Fail to choose the correct letter, will result in a limb from your hangman being lost. 
+* Look at how many spaces there are shown to you, each space represents a letter in the word.
+* Guess a letter
+* Win - You gussed the word correctly. +5 points
+* Loose - You have chosen... poorley.
+* See your name and score on the board -5 points
+
+Using the above rules I built a flow chart to begin with to help me with what functions I needed to build and what order I should build them where possible. I used [lucidchart](https://www.lucidchart.com/pages/) to create the following:
 ![Lucidchart Flowchart](./documentation/features/flowchart_hangman.png "Flowchart")
 
 ### User Goals
@@ -34,6 +45,8 @@ Key Features within this project:
 
 1. I made a scoreboard that adds a username and a point scoreing system to add to the competitiveness of this game. I hoped that the thrill of seeing your name pop up was reminicent of older arcade games, and might users come back to play again, and see who has the highest score.
 ![Scoreboard](./documentation/scoreboard_pics/scoreboard_hangman.png "Scoreboard")
+
+* (You can find the link to the scoreboard [HERE](https://docs.google.com/spreadsheets/d/1JdvTA2fKHEM3F4te9Y1SV8tsfhz-ruJAHCrfvIhJldQ/edit?usp=sharing) )
 
 2. I wanted the game to have a clearing function, so as to not crowd the terminal. I ended up also adding in a timed element to allow the user to read the terminal but not wipe the screen too quickly. 
 
@@ -57,6 +70,19 @@ Whilst desgin for this project was less creative than past projects in terms of 
 ## Testing
 
   ### All notes related to testing are found [here](documentation/testing.md).
+
+## Languages, Frameworks & Libraries
+* Python3
+
+* Time, Random, OS were all used to help build functions like clear screen/ pick word.
+
+* Gspread (Googlesheets) was used as the basis for my scoreboard to be regularly updated. 
+
+* The Code Institute's template of Python3 with additional HTML/Javascript used to then be used in Heroku. 
+
+* My repo on Github used for storing and pushing Git.
+
+* Heroku 
 
 ## Credits 
 Through-out building I predominantly used my knowledge gained from [Code Institue's Diploma Course](https://codeinstitute.net/full-stack-software-development-diploma/). As well as multiple other sources:

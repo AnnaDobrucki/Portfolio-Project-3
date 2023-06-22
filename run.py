@@ -134,9 +134,9 @@ def play_game(hidden_word):
                     for index in indices:
                         hidden_word_list[index] = answers
                     word_arragement = "".join(hidden_word_list)
-                    print(word_arragement)
                     if "_" not in word_arragement:
                         tries = True
+                    print(word_arragement)
 
 # Checks if user entered wrong letter and keeps track of lives, until == 0
                 elif answers not in hidden_word:

@@ -31,8 +31,8 @@ def beginning_intro():
     """
     while True:
         try:
-            ready = input("\nAhoy there folks! "
-                          "You ready to play some hangman? --> Y/N?").upper()
+            ready = input("\nAhoy there folks! You"
+                          "ready to play some hangman? --> Y/N? \n").upper()
             if ready not in ("Y", "N"):
                 raise ValueError("Oops, please answer with Y or N!")
 
@@ -72,7 +72,7 @@ def username():
                   " don't use a number.\n")
             print(Fore.RED + "Good Luck Muhahahaha! \n")
             input("Let's get going! Please press enter and see how"
-                  " many letters there are to guess...")
+                  " many letters there are to guess...\n")
             return username
 
 
@@ -188,7 +188,7 @@ def play_game(hidden_word):
 
 def replay():
     # Replay function to allow user to end or try again with game
-    response = input(" \nWould you like to try again? Enter Y/N").upper()
+    response = input(" \nWould you like to try again? Enter Y/N\n").upper()
     if response == "Y":
         clear_screen()
         hidden_word = pick_random_word()

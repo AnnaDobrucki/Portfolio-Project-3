@@ -55,16 +55,21 @@ def top_scores():
     Gathers data of last 5 scores to show user
     """
     latest_scores = SHEET.worksheet("Scoreboard")
-
+    print(Fore.GREEN + "Here is the current Leaderboard: \n")
+    
     columns = []
-    for ind in range(1,3):
+    for ind in range(1,2):
         column = latest_scores.col_values(ind)
-        columns.append(column[5:])
-    return columns
-   
-   
-top_scores()
-print(top_scores)
+        columns.append(" ".join(column[5:]))
+    print(" ".join(columns))
+
+    columns_two = []
+    for ind in range(2,3):
+        column = latest_scores.col_values(ind)
+        columns_two.append("      ".join(column[5:]))
+    print(Fore.GREEN + "     ".join(columns_two))
+
+
 
 def username():
     """
@@ -230,6 +235,7 @@ def main():
     Calls all functions into one place
     """
     beginning_intro()
+    top_scores()
     name = username()
     hidden_word = pick_random_word()
     all_points = play_game(hidden_word)

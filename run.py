@@ -50,25 +50,25 @@ def beginning_intro():
         except ValueError as value_error:
             print(value_error)
 
+
 def top_scores():
     """
     Gathers data of last 5 scores to show user
     """
     latest_scores = SHEET.worksheet("Scoreboard")
     print(Fore.GREEN + "Here is the current Leaderboard: \n")
-    
+
     columns = []
-    for ind in range(1,2):
+    for ind in range(1, 2):
         column = latest_scores.col_values(ind)
         columns.append(" ".join(column[5:]))
     print(" ".join(columns))
 
     columns_two = []
-    for ind in range(2,3):
+    for ind in range(2, 3):
         column = latest_scores.col_values(ind)
         columns_two.append("      ".join(column[5:]))
     print(Fore.GREEN + "     ".join(columns_two))
-
 
 
 def username():
@@ -111,7 +111,7 @@ def pick_random_word():
 
 def play_game(hidden_word):
     """
-    Function to start playing the game 
+    Function to start playing the game
     and show the length of the hidden word
     """
     picked_word = list(hidden_word)
@@ -202,9 +202,9 @@ def play_game(hidden_word):
 
 
 def replay():
-    """ 
-    Replay function to allow user 
-    to end or try again with game 
+    """
+    Replay function to allow user
+    to end or try again with game
     """
     response = input(" \nWould you like to try again? Enter Y/N\n").upper()
     if response == "Y":
@@ -223,8 +223,8 @@ def replay():
 
 
 def update_score(scores, all_points):
-    """ 
-    Function to update the scores onto GooglSheets 
+    """
+    Function to update the scores onto GooglSheets
     """
     print(f"Here are the points you managed to score! {all_points}")
     score.append_row(scores)

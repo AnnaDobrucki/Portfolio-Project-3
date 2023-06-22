@@ -126,7 +126,7 @@ def play_game(hidden_word):
                     print("So far you have guessed these correct \n")
                     for item in correct_answers:
                         print(item, end=" ")
-                    print(Fore.BLUE + "\n Don't stop now!")
+                    print(Fore.BLUE + "\n Don't stop now!\n")
 
                     hidden_word_list = list(word_arragement)
                     indices = [i for i, letter in enumerate(hidden_word)
@@ -134,6 +134,7 @@ def play_game(hidden_word):
                     for index in indices:
                         hidden_word_list[index] = answers
                     word_arragement = "".join(hidden_word_list)
+                    print(word_arragement)
                     if "_" not in word_arragement:
                         tries = True
 
@@ -147,7 +148,9 @@ def play_game(hidden_word):
                     print("So far you have used the words: \n")
                     for item in guessed:
                         print(item, end=" ")
-                    print(Fore.BLUE + "\n Care to try again?")
+                    print(Fore.BLUE + "\nCare to try again?\n")
+                    print(word_arragement)
+
 
             else:
                 raise ValueError(Fore.YELLOW + "Hang on we need only one"
@@ -157,17 +160,7 @@ def play_game(hidden_word):
         except ValueError as value_error:
             print(value_error)
 
-        # Printing the answers onto screen for user
-        current = ""
-        if tries is False:
-            for letter in hidden_word:
-                if letter in answers:
-                    current += letter
-                else:
-                    current += " _"
-            print(Fore.BLUE + current)
-
-    # If statement for win/ loose outcomes
+# If statement for win/ loose outcomes
     if tries:
         clear_screen()
         user_win()

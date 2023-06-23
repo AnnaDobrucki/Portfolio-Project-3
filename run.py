@@ -56,18 +56,18 @@ def recent_scores():
     Gathers data of last 5 scores to show user
     """
     latest_scores = SHEET.worksheet("Scoreboard")
-    print(Fore.GREEN + "Here are the most recent Scores!: \n")
+    print(Fore.GREEN + "Here is the Leaderboard!: \n")
 
     columns = []
-    for ind in range(1, 2):
+    for ind in range(5, 6):
         column = latest_scores.col_values(ind)
-        columns.append(" ".join(column[5:]))
+        columns.append(" ".join(column[-5:]))
     print(" ".join(columns))
 
     columns_two = []
-    for ind in range(2, 3):
+    for ind in range(4, 5):
         column = latest_scores.col_values(ind)
-        columns_two.append("      ".join(column[5:]))
+        columns_two.append("      ".join(column[-5:]))
     print(Fore.YELLOW + "     ".join(columns_two))
 
 
@@ -239,7 +239,7 @@ def main():
     name = username()
     hidden_word = pick_random_word()
     all_points = play_game(hidden_word)
-    scores = [name, all_points]
+    scores = [all_points, name]
     update_score(scores, all_points)
 
 

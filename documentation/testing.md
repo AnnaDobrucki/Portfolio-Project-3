@@ -19,9 +19,6 @@
 ![GitHub Commit changes for creds](../documentation/error_resolution_pics/Commit_changes_to_original_creds_file.png "Git Hub commit changes")
 ![Creds Deleted](../documentation/error_resolution_pics/delete_creds_hangman.png "Creds deleted")
 
-
-
-
 ## Manual Testing 
 
 ### Start Game

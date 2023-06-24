@@ -48,6 +48,9 @@ Key Features within this project:
 
 * (You can find the link to the scoreboard [HERE](https://docs.google.com/spreadsheets/d/1JdvTA2fKHEM3F4te9Y1SV8tsfhz-ruJAHCrfvIhJldQ/edit?usp=sharing) )
 
+* Another addition after discussiong with my mentor, was to add in a showing of the scores to the game itself, so I added in a formula to Googlesheets to reconfigure/ orginise the scoreboard to show the top 5 scores to date. I used this article to help me with the formula. [HERE](https://www.lido.app/tutorials/google-sheets-auto-sort#sort) 
+![Leaderboard](./documentation/scoreboard_pics/leaderboard_pic.png "Leaderboard")
+
 2. I wanted the game to have a clearing function, so as to not crowd the terminal. I ended up also adding in a timed element to allow the user to read the terminal but not wipe the screen too quickly. 
 
 3. After building the game and running through it a couple of times, I realised that playing a terminal based game can be quite dull with so much black and white space. I looked into how to create colours within the terminal to help elements pop out/ look interesting/ and align with my goal of ease of use. I imported Colorama which allowed me to achieve this.

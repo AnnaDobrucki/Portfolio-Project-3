@@ -17,6 +17,7 @@ Using python as my main platform I have built this game using both Gitpod and He
 When beginning to build this game I wanted to set out some straightforward goals to help with both building the code from the ground up, as well as things to aim for. I came up with the following:
 
 * To validate players choices through out.
+* To show a Leaderboard that remains up to date
 * To show where and how a player went right or wrong.
 * To create a sense of competition with other users, and creating a scoreboard function.
 * Create direct dialouge to make the game straightforward for a user
@@ -44,7 +45,7 @@ Using the above rules I built a flow chart to begin with to help me with what fu
 Key Features within this project:
 
 1. I made a scoreboard that adds a username and a point scoreing system to add to the competitiveness of this game. I hoped that the thrill of seeing your name pop up was reminicent of older arcade games, and might users come back to play again, and see who has the highest score.
-![Scoreboard](./documentation/scoreboard_pics/scoreboard_hangman.png "Scoreboard")
+![Scoreboard](./documentation/scoreboard_pics/scoreboard_pics.png "Scoreboard")
 
 * (You can find the link to the scoreboard [HERE](https://docs.google.com/spreadsheets/d/1JdvTA2fKHEM3F4te9Y1SV8tsfhz-ruJAHCrfvIhJldQ/edit?usp=sharing) )
 
@@ -54,17 +55,25 @@ Key Features within this project:
 2. I wanted the game to have a clearing function, so as to not crowd the terminal. I ended up also adding in a timed element to allow the user to read the terminal but not wipe the screen too quickly. 
 
 3. After building the game and running through it a couple of times, I realised that playing a terminal based game can be quite dull with so much black and white space. I looked into how to create colours within the terminal to help elements pop out/ look interesting/ and align with my goal of ease of use. I imported Colorama which allowed me to achieve this.
+![Colorama useage](./documentation/features/colorama_useage.png "Colorama usage")
 
 4. The game constiently tells the user what words they have correctly guessed or what words the have already used. 
+![Guessed correct](./documentation/features/show_correct_guesses.png "Guessed correct")
+
 
 5. There is a "lives" counter that repeatedly tells the user how many guesses they have remaining. With, of course, the visual aid of "Hangman" loosing limbs every failed turn. In conjunction with a change of colour to aid visually for people with potential visual impairments. 
+![Hangman Lives Lost](./documentation/features/hangman_lives_lost.png "Lives Lost Hangman drawing")
 
 6. I have made sure that validation is required through out the game, ranging from Username through to letters being picked rather than numbers.
+![Validate guessed letter](./documentation/features/validate_guessed_letter.png "validate guessed letter")
+
 
 
 ## Design 
 Whilst desgin for this project was less creative than past projects in terms of web desgin. I still wanted to give the project something to make it not look just like writing in a terminal. Ways in which I achieved this were:
 1. Using ASCII Art from [fsymbols](https://fsymbols.com/text-art/) I got the looks of the Hangman intro/WIN/LOOSE fonts to stand out and look impactful. 
+![Lost Game Art](./documentation/design_pics/art_for_lost_game.png "Lost Game Art")
+
 
 2. Creating the desgin for the loosing limbs hangman, to help the user visualise the Lives Lost, and keep track of how many tries they have left. As well as making them colourful for visual aids, not to mention more entertaining. However I also realised that because of my clearscreen() it meant that colours were essential, wihtout them it became harder to see the progession of lives lost. 
 

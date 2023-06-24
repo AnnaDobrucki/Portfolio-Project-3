@@ -84,7 +84,7 @@ Whilst desgin for this project was less creative than past projects in terms of 
 
 * My repo on Github used for storing and pushing Git.
 
-* Heroku 
+* Heroku - Within Heroku I used the packages of Python and Node.JS
 
 ## Credits 
 Through-out building I predominantly used my knowledge gained from [Code Institue's Diploma Course](https://codeinstitute.net/full-stack-software-development-diploma/). As well as multiple other sources:

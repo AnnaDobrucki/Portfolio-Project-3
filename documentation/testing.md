@@ -73,6 +73,8 @@
 
 After building the main bulk of my code I started chekcing for errors within the CI Linter. See Below:
 1. Run.py 
+![Run.py](./linter_testing_pics/run.py_linter_testing_pic.png "Error testing run.py")
+
 
 2. Utility.py
 ![Utility.py Error Testing](./linter_testing_pics/utility.py_no_errors_pic.png "Error Testing Linter")
@@ -85,7 +87,3 @@ After building the main bulk of my code I started chekcing for errors within the
 ![Welcome Page DESKTOP](./lighthouse_testing_pics/welcome_page_desktop.png "Lighthouse Welcome DESKTOP")
 
 [Return to READme.md](../README.md)
-
-
-
-

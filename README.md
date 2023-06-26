@@ -108,11 +108,9 @@ After building the application, there were a couple of ideas that in the future 
 * Go to the Heroku Dashboard. Create new apllication
 * Add Config Var's for Creds and Port 8000
 * Add build packs of Python and NodeJS in sequence 
+* Link repository from GitHub to Heroku
 * Go to deploy page, select auto deployment
 * Deploy Main Branch
-
-Link the Heroku app to the repository.
-Click on Deploy.
 
 ## Credits 
 Through-out building I predominantly used my knowledge gained from [Code Institue's Diploma Course](https://codeinstitute.net/full-stack-software-development-diploma/). As well as multiple other sources:

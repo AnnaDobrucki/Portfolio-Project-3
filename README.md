@@ -103,6 +103,17 @@ After building the application, there were a couple of ideas that in the future 
 
 * Heroku - Within Heroku I used the packages of Python and Node.JS.
 
+### Deployment 
+
+* Go to the Heroku Dashboard. Create new apllication
+* Add Config Var's for Creds and Port 8000
+* Add build packs of Python and NodeJS in sequence 
+* Go to deploy page, select auto deployment
+* Deploy Main Branch
+
+Link the Heroku app to the repository.
+Click on Deploy.
+
 ## Credits 
 Through-out building I predominantly used my knowledge gained from [Code Institue's Diploma Course](https://codeinstitute.net/full-stack-software-development-diploma/). As well as multiple other sources:
 
@@ -116,8 +127,6 @@ Through-out building I predominantly used my knowledge gained from [Code Institu
 
  * I also had a look at this video to help me with the "not" boolen for inverting truth [Inverting truth](https://www.youtube.com/watch?v=gbx04NJi5As)
  * I was also inspired by this video for the building of how to itterate through the guessed and correct amswers (spesifically the enumerate part) [Kite Python Video](https://www.youtube.com/watch?v=m4nEnsavl6w)
-
-
 
  After some sick leave I went back to revisit some basics and these challenges from [w3school](https://www.w3schools.com/python/exercise.asp?filename=exercise_ifelse1) were particularly helpful. 
  

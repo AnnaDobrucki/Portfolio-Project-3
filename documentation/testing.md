@@ -74,5 +74,12 @@ After building the main bulk of my code I started chekcing for errors within the
 2. Utility.py
 ![Utility.py Error Testing](./linter_testing_pics/utility.py_no_errors_pic.png "Error Testing Linter")
 
+## Lighthouse Testing
+* Test Mobile
+![Welcome Page](./lighthouse_testing_pics/welcome_page.png"Lighthouse Welcome")
+
+* Test Desktop - The SEO is mid 80's as I'd need to create some meta data for the site itself, for use in such things like google.
+![Welcome Page DESKTOP](./lighthouse_testing_pics/welcome_page_desktop.png"Lighthouse Welcome DESKTOP")
+
 
 

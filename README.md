@@ -17,10 +17,11 @@ Using python as my main platform I have built this game using both Gitpod and He
 When beginning to build this game I wanted to set out some straightforward goals to help with both building the code from the ground up, as well as things to aim for. I came up with the following:
 
 * To validate players choices through out.
-* To show a Leaderboard that remains up to date
+* To show a Leaderboard that remains up to date.
+* Show the 5 top scores from Leaderboard.
 * To show where and how a player went right or wrong.
 * To create a sense of competition with other users, and creating a scoreboard function.
-* Create direct dialouge to make the game straightforward for a user
+* Create direct dialouge to make the game straightforward for a user.
 
 ### How to Play Hangman 
 For people who dont know, here's how you play Hangman:
@@ -67,8 +68,6 @@ Key Features within this project:
 6. I have made sure that validation is required through out the game, ranging from Username through to letters being picked rather than numbers.
 ![Validate guessed letter](./documentation/features/validate_guessed_letter.png "validate guessed letter")
 
-
-
 ## Design 
 Whilst desgin for this project was less creative than past projects in terms of web desgin. I still wanted to give the project something to make it not look just like writing in a terminal. Ways in which I achieved this were:
 1. Using ASCII Art from [fsymbols](https://fsymbols.com/text-art/) I got the looks of the Hangman intro/WIN/LOOSE fonts to stand out and look impactful. 
@@ -79,7 +78,11 @@ Whilst desgin for this project was less creative than past projects in terms of 
 
 3. Using Colorama, after importing colours to help add definition for different lines of text. Helps to build tension for the user playing the game seeing colour progession. Found thanks to this helpful article [Colorama A Hidden Convenience](https://medium.com/analytics-vidhya/colorama-a-hidden-convinience-6fb22dc00835)
 
-
+### Future Ideas
+After building the application, there were a couple of ideas that in the future I would like to implement. 
+* Creating a main menu to allow people to select 
+* Making some difficulty settings, reducing the lives and making harder words to guess.
+* Creating a "hint" option that allows the user a helping hand if they are struggling. 
 
 ## Testing
 

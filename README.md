@@ -2,6 +2,8 @@
 Welcome to the well known universal game of Hangman! Where getting a letter wrong can mean pain of death...
 Using python as my main platform I have built this game using both Gitpod and Heroku for my [Code Insitute Tertiary Project.](https://codeinstitute.net/full-stack-software-development-diploma/)
 
+![amIresponsive pics](./documentation/design_pics/amIresponsive_preview_pic.png "Responsivness Pic")
+
 ## Index
 
 * [Project Goals](#project-goals) 
@@ -107,8 +109,14 @@ Through-out building I predominantly used my knowledge gained from [Code Institu
  I went through many different sites to help me with building this app:
  * I was struggling to understand how to do Error handling and this page helped me with learning how to print Error Messages [w3school](https://www.w3schools.com/python/gloss_python_error_handling.asp)
  * Studying further into Booleans was helpful for itteraing through the current letters that had been guessed and checking againt the word itself. This article helped to break it down for me in a bitesized way [Real Python](https://realpython.com/python-in-operator/)
+ * Here I learnt hot to import the os for clearing the screen, here [Clear screen article](https://www.codingninjas.com/codestudio/library/how-to-clear-a-screen-in-python)
+ * As stated above the artwork used was used from here [fsymbols](https://fsymbols.com/text-art/)
 
  I was also inspired by these videos:
+
+ * I also had a look at this video to help me with the "not" boolen for inverting truth [Inverting truth](https://www.youtube.com/watch?v=gbx04NJi5As)
+ * I was also inspired by this video for the building of how to itterate through the guessed and correct amswers (spesifically the enumerate part) [Kite Python Video](https://www.youtube.com/watch?v=m4nEnsavl6w)
+
 
 
  After some sick leave I went back to revisit some basics and these challenges from [w3school](https://www.w3schools.com/python/exercise.asp?filename=exercise_ifelse1) were particularly helpful. 

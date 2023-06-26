@@ -91,6 +91,9 @@ def draw_hangman(lives_remaining):
 
 
 def user_lost():
+    """
+    Function for User Lost to print in Red
+    """
     print(Fore.RED + '''
                 ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░░ █▀▀█ █▀▀ ▀▀█▀▀ █
                 ▒█▄▄▄█ █░░█ █░░█ 　 ▒█░░░ █░░█ ▀▀█ ░░█░░ ▀
@@ -98,6 +101,9 @@ def user_lost():
 
 
 def user_win():
+    """
+    Function for User Win to print in Green
+    """
     print(Fore.GREEN + '''
 
                 ▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░▒█ █▀▀█ █▀▀▄

@@ -53,7 +53,7 @@ def beginning_intro():
 
 def recent_scores():
     """
-    Gathers data of last 5 scores to show user
+    Gathers data of highest 5 scores to show user
     """
     latest_scores = SHEET.worksheet("Scoreboard")
     print(Fore.GREEN + "Here is the Leaderboard!: \n")

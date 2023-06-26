@@ -5,6 +5,8 @@
  * [Error resolution and Debugging](#error-resolution-and-debugging)
  * [Manual testing](#manual-testing)
  * [Code Institue Linter testing](#code-institue-linter-testing)
+ * [Lighthouse Testing](#lighthouse-testing)
+
  
   ## Error Resolution and Debugging 
 1. Whilst not a problem that had occured from myself, it is worth noting that Gitpod had a authentication issue and meant I was unable to push saved work up to GitHub, this may result in some uncongruent and messy commit messages, see attached email for verification ![Gitpod auth error](../documentation/error_resolution_pics/Gitpod_authentication_error.png "Gitpod auth error picture")
@@ -76,10 +78,13 @@ After building the main bulk of my code I started chekcing for errors within the
 
 ## Lighthouse Testing
 * Test Mobile
-![Welcome Page](./lighthouse_testing_pics/welcome_page.png"Lighthouse Welcome")
+![Welcome Page](./lighthouse_testing_pics/welcome_page.png "Lighthouse Welcome")
 
 * Test Desktop - The SEO is mid 80's as I'd need to create some meta data for the site itself, for use in such things like google.
-![Welcome Page DESKTOP](./lighthouse_testing_pics/welcome_page_desktop.png"Lighthouse Welcome DESKTOP")
+![Welcome Page DESKTOP](./lighthouse_testing_pics/welcome_page_desktop.png "Lighthouse Welcome DESKTOP")
+
+[Return to READme.md](../README.md)
+
 
 
 
